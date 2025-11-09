@@ -1,0 +1,382 @@
+/* Reset lại cơ bản*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", sans-serif;
+    color: #333;
+    background-color: #f4f6fa;
+    line-height: 1.6;
+}
+/* Phần header */
+.header {
+    background-color: #015936;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 10px 0;
+}
+/* Logo */
+.logo img {
+    max-height: 55px;
+}
+/* Tìm kiếm */
+.search-box {
+    flex: 1;
+    max-width: 550px;
+    position: relative;
+}
+.search-box input {
+    width: 100%;
+    padding: 10px 45px 10px 15px;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+}
+.search-box button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #004422;
+}
+/* Hotline */
+.right-box {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+.hotline-box-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    border-radius: 5px;
+}
+.hotline-box-head i {
+    font-size: 24px;
+    color: white;
+}
+.hotline-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+.hotline-text .title {
+    font-weight: 700;
+    font-size: 16px;
+    color: white;
+}
+.hotline-text .number {
+    font-size: 15px;
+    color: #ffffff;
+}
+/* Giỏ hàng*/
+.GioHang {
+    width: 45px;
+    height: 45px;
+    background: white;
+    color: #015936;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 22px;
+}
+.GioHang:hover {
+    color: #00bf63;
+}
+/* Menu */
+.menu {
+    background-color: #e6fff2;
+    text-align: center;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    padding: 10px 0;
+}
+
+.menu a {
+    font-size: 18px;
+    font-weight: bold;
+    color: #015936;
+    text-decoration: none;
+}
+
+.menu a.active,
+.menu a:hover {
+    color: #00bf63;
+}
+/* Ẩn menu con mặc định ở phần sản phẩm*/
+.nav-item .rd-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid #00b46b;
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 8px 0;
+    z-index: 999;
+}
+/* Hiện menu con khi rê chuột vào mục sản phẩm */
+.nav-item.dropdown:hover .rd-menu {
+    display: block;
+}
+/* Căn dọc các mục trong dropdown */
+.rd-menu li {
+    display: block;
+    text-align: left;
+    padding: 4px 15px;
+}
+/* Tùy chỉnh màu item con */
+.dropdown-item {
+    color: #015936;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s;
+}
+.dropdown-item:hover {
+    background-color: #e6fff2;
+    color: #00bf63;
+}
+/* Xóa mũi tên mặc định của Bootstrap*/
+.nav-item.dropdown .dropdown-toggle::after {
+    display: none;
+}
+
+/* Thiết lập responsive trên thiết bị điện thoại */
+@media (max-width: 768px) {
+    .header-top {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .right-box {
+        justify-content: center;
+    }
+}
+/*Phần nội dung */
+hr {
+    color: #92ffd0;
+}
+.btn-danhmuc {
+    background-color: #00bf63 !important;
+    color: white !important;
+    border: none !important;
+}
+
+.btn-danhmuc:hover,
+.btn-danhmuc:focus {
+    background-color: #045330 !important;
+    color: white !important;
+}
+.btn-danhmuc {
+    background-color: #009b4e !important;
+    border: none;
+}
+
+.dropdown-menu {
+    border: 1px solid #cfe8d5;
+}
+
+.dm-item.active,
+.dm-item:hover {
+    background-color: #00bf63;
+    color: #fff;
+}
+.txtdungcuviet {
+    color: #00bf63;
+}
+.card-sanpham {
+    width: 220px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 10px;
+    transition: 0.3s;
+    text-align: center;
+    border: 1px solid #b2ffdd;
+}
+.card-sanpham:hover {
+    transform: translateY(-5px);
+}
+.anh-sp {
+    width: 90%;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+}
+.ten-sp {
+    margin: 10px 0 5px;
+    font-weight: 500;
+    color: #222;
+}
+.gia-sp {
+    color: #ff0000;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.nut-xem {
+    display: inline-block;
+    background-color: #006633;
+    color: white;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: 0.2s;
+}
+.nut-xem:hover {
+    background-color: #00994c;
+}
+
+.phantrang {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.phantrang .nut {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    background-color: #00341d;
+    color: white;
+    border-radius: 50%;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.phantrang .nut:hover {
+    background-color: #39b54a;
+}
+
+.phantrang .nut.active {
+    background-color: #39b54a;
+}
+
+/* Phần Footer */
+.footer {
+    background-color: #e8fff4;
+    padding: 30px 80px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    color: #000;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-left h3,
+.footer-right h3 {
+    color: #004d26;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.footer-left .store-name span {
+    color: #00994e;
+    font-weight: bold;
+}
+.store-name {
+    color: #00994e;
+    font-weight: bold;
+}
+.footer-left p {
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+.footer-left i {
+    color: #004d26;
+    margin-right: 6px;
+}
+
+/* Hotline */
+.hotline-box-end {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 5px;
+}
+
+.phone-icon {
+    font-size: 26px;
+    color: #00a243;
+}
+
+.hotline-number {
+    color: #00994e;
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: underline;
+    margin: 0;
+}
+
+.hotline-time {
+    font-size: 14px;
+    margin: 0;
+    margin-top: -2px;
+    color: #000;
+}
+
+/* Kết nối */
+.tt-Ketnoi {
+    margin-top: 12px;
+    color: #00994e;
+    font-weight: bold;
+}
+
+.Cac-icon a {
+    color: #000;
+    font-size: 22px;
+    margin-right: 10px;
+    transition: 0.2s;
+}
+
+.Cac-icon a:hover {
+    color: #00994e;
+}
+
+/* Dòng bản quyền */
+.footer-bottom {
+    background-color: #003d26;
+    color: white;
+    text-align: center;
+    padding: 12px 0;
+    font-size: 14px;
+    width: 100%;
+}
