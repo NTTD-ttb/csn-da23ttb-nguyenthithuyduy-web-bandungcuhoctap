@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+        <title>Cửa hàng dụng cụ học tập</title>
+        <link rel="icon" href="../image/logo_icon.png" />
+        <link rel="stylesheet" href="../CSS/TrangChu.css" />
+        <!-- link thu vien icon Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    </head>
+    <body>
+        <!-- Phần header -->
+        <div class="header">
+            <div class="header-top container">
+                <!-- Logo của cửa hàng -->
+                <div class="logo">
+                    <img src="../image/logo_store.svg" alt="logo_store" />
+                </div>
+                <!-- Thanh tìm kiếm -->
+                <form class="search-box">
+                    <input type="text" placeholder="Tìm sản phẩm........." />
+                    <button><i class="fa fa-search"></i></button>
+                </form>
+                <!-- Hotline với Giỏ hàng -->
+                <div class="right-box">
+                    <div class="hotline-box-head">
+                        <i class="fa-solid fa-phone-volume"></i>
+                        <div class="hotline-text">
+                            <span class="title">Hotline</span>
+                            <span class="number">076 299 0875</span>
+                        </div>
+                    </div>
+                    <a class="GioHang" href="../Html/TrangGioHang.html">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                </div>
+            </div>
+            <!--Thanh menu -->
+            <nav class="menu">
+                <ul>
+                    <li><a href="../Html/TrangChu.html" class="active">Trang chủ</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="../Html/TrangSanPham.html" id="Dropdown-SP" role="button" data-bs-toggle="dropdown">
+                            Sản phẩm
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="../Html/TrangSanPham.html">Dụng cụ viết</a></li>
+                            <li><a class="dropdown-item" href="../Html/SPDungVoHocSinh.html">Vở học sinh</a></li>
+                            <li><a class="dropdown-item" href="../Html/SPDungCuDo_TinhToan.html">Dụng cụ đo, tính toán</a></li>
+                            <li><a class="dropdown-item" href="../Html/SPHoaPham.html">Họa phẩm</a></li>
+                            <li><a class="dropdown-item" href="../Html/SPBalo.html">Balo</a></li>
+                            <li><a class="dropdown-item" href="../Html/SPCacSanPhamKhac.html">Các sản phẩm khác</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../Html/TrangYeuThich.html">Yêu thích</a></li>
+                    <li><a href="../Html/TrangLienHe.html">Liên hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Phần Content -->
+        <section class="container">
+            <!-- Chỗ Banner -->
+            <div class="banner_dau">
+                <div id="banner" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-bs-interval="5000">
+                            <img src="../image/banner1.svg" alt="banner1" class="d-block" style="width: 100%" />
+                        </div>
+                        <div class="carousel-item" data-bs-interval="5000">
+                            <img src="../image/banner2.svg" alt="banner2" class="d-block" style="width: 100%" />
+                        </div>
+                        <div class="carousel-item" data-bs-interval="5000">
+                            <img src="../image/banner3.svg" alt="banner3" class="d-block" style="width: 100%" />
+                        </div>
+                    </div>
+                    <!--Nút qua phải và trái trong carousel-->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#banner" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#banner" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+            </div>
+            <!-- Sản phẩm nổi bậc -->
+            <div class="SanPhamNoiBac">
+                <div id="spnb" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+                    <!-- Nút phía dưới carousel -->
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#spnb" data-bs-slide-to="0" class="active"></button>
+                        <button type="button" data-bs-target="#spnb" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#spnb" data-bs-slide-to="2"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <!-- tung trang san pham noi bac 1 -->
+                        <div class="carousel-item active" data-bs-interval="3000">
+                            <section class="sanpham-noibat">
+                                <h2 class="tieude">SẢN PHẨM NỔI BẬT</h2>
+                                <div class="hang-sp">
+                                    <!--  -->
+                                    <div class="card-sanpham">
+                                        <img src="../image/buths/but8.svg" alt="sp1" class="anh-sp" />
+                                        <p class="ten-sp">Bút bi mực xanh</p>
+                                        <h4 class="gia-sp">Giá: 55.000 đ</h4>
+                                        <a href="../Html/TrangChiTietSanPham.html" class="nut-xem">
+                                            <i class="fa-solid fa-eye"></i>
+                                            Xem sản phẩm
+                                        </a>
+                                    </div>
+                                    <!--  -->
+                                    <div class="card-sanpham">
+                                        <img src="../image/buths/but11.svg" alt="sp2" class="anh-sp" />
+                                        <p class="ten-sp">Bút bi mực đỏ</p>
+                                        <h4 class="gia-sp">Giá: 60.000 đ</h4>
+                                        <a href="#" class="nut-xem">
+                                            <i class="fa-solid fa-eye"></i>
+                                            Xem sản phẩm
+                                        </a>
+                                    </div>
+                                    <!--  -->
+                                    <div class="card-sanpham">
+                                        <img src="../image/buths/but13.svg" alt="sp3" class="anh-sp" />
+                                        <p class="ten-sp">Bút dạ quang</p>
+                                        <h4 class="gia-sp">Giá: 12.000 đ</h4>
+                                        <a href="#" class="nut-xem">
+                                            <i class="fa-solid fa-eye"></i>
+                                            Xem sản phẩm
+                                        </a>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <!-- tung trang san pham noi bac 2 -->
+                        <div class="carousel-item">
+                            <section class="sanpham-noibat">
+                                <h2 class="tieude">SẢN PHẨM NỔI BẬT</h2>
+                                <div class="hang-sp">
+                                    <!--  -->
+                                    <div class="card-sanpham">
+                                        <img src="../image/Dcdo_tinhtoan/dott8.svg" alt="sp1" class="anh-sp" />
+                                        <p class="ten-sp">Máy tính casio 880BTG</p>
+                                        <h4 class="gia-sp">Giá: 850.000 đ</h4>
+                                        <a href="../Html/TrangChiTietSanPham.html" class="nut-xem">
+                                            <i class="fa-solid fa-eye"></i>
+                                            Xem sản phẩm
+                                        </a>
+                                    </div>
+                                    <!--  -->
+                                    <div class="card-sanpham">
+                                        <img src="../image/vohs/vo1.svg" alt="sp2" class="anh-sp" />
+                                        <p class="ten-sp">Vở học sinh 4 ô ly ngang</p>
+                                        <h4 class="gia-sp">Giá: 7.000 đ</h4>
+                                        <a href="#" class="nut-xem">
+                                            <i class="fa-solid fa-eye"></i>
+                                            Xem sản phẩm
+                                        </a>
+                                    </div>
+                                    <!--  -->
+                                    <div class="card-sanpham">
+                                        <img src="../image/hoapham/hp3.svg" alt="sp3" class="anh-sp" />
+                                        <p class="ten-sp">Hộp màu sáp dầu</p>
+                                        <h4 class="gia-sp">Giá: 18.000 đ</h4>
+                                        <a href="#" class="nut-xem">
+                                            <i class="fa-solid fa-eye"></i>
+                                            Xem sản phẩm
+                                        </a>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <!-- tung trang san pham noi bac 3 -->
+                        <div class="carousel-item">
+                            <section class="sanpham-noibat">
+                                <h2 class="tieude">SẢN PHẨM NỔI BẬT</h2>
+                                <div class="hang-sp">
+                                    <!--  -->
+                                    <div class="card-sanpham">
+                                        <img src="../image/hoapham/hp4.svg" alt="sp1" class="anh-sp" />
+                                        <p class="ten-sp">Màu sáp vặn</p>
+                                        <h4 class="gia-sp">Giá: 24.000 đ</h4>
+                                        <a href="#" class="nut-xem">
+                                            <i class="fa-solid fa-eye"></i>
+                                            Xem sản phẩm
+                                        </a>
+                                    </div>
+                                    <!--  -->
+                                    <div class="card-sanpham">
+                                        <img src="../image/balo/bl10.svg" alt="sp2" class="anh-sp" />
+                                        <p class="ten-sp">Balo học sinh, sinh viên</p>
+                                        <h4 class="gia-sp">Giá: 190.000 đ</h4>
+                                        <a href="#" class="nut-xem">
+                                            <i class="fa-solid fa-eye"></i>
+                                            Xem sản phẩm
+                                        </a>
+                                    </div>
+                                    <!--  -->
+                                    <div class="card-sanpham">
+                                        <img src="../image/dungcukhac/dck4.svg" alt="sp3" class="anh-sp" />
+                                        <p class="ten-sp">Túi dựng bút Kapibala</p>
+                                        <h4 class="gia-sp">Giá: 20.000 đ</h4>
+                                        <a href="#" class="nut-xem">
+                                            <i class="fa-solid fa-eye"></i>
+                                            Xem sản phẩm
+                                        </a>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Dụng cụ viết -->
+            <section class="dungcuviet">
+                <h2 class="tieude">DỤNG CỤ VIẾT</h2>
+                <div class="hang-sp">
+                    <div class="card-sanpham">
+                        <img src="../image/buths/but3.svg" class="anh-sp" alt="" />
+                        <p class="ten-sp">Bút chì ngòi bấm</p>
+                        <h4 class="gia-sp">Giá: 50.000 đ</h4>
+                        <a href="#" class="nut-xem">
+                            <i class="fa-solid fa-eye"></i>
+                            Xem sản phẩm
+                        </a>
+                    </div>
+
+                    <div class="card-sanpham">
+                        <img src="../image/buths/but15.svg" class="anh-sp" alt="" />
+                        <p class="ten-sp">Bút máy FB 17 - 2</p>
+                        <h4 class="gia-sp">Giá: 100.000 đ</h4>
+                        <a href="#" class="nut-xem">
+                            <i class="fa-solid fa-eye"></i>
+                            Xem sản phẩm
+                        </a>
+                    </div>
+
+                    <div class="card-sanpham">
+                        <img src="../image/buths/but5.svg" class="anh-sp" alt="" />
+                        <p class="ten-sp">Bút bi mực xanh</p>
+                        <h4 class="gia-sp">Giá: 50.000 đ</h4>
+                        <a href="#" class="nut-xem">
+                            <i class="fa-solid fa-eye"></i>
+                            Xem sản phẩm
+                        </a>
+                    </div>
+                </div>
+                <a href="../Html/TrangSanPham.html" class="nut-xemtatca">XEM TẤT CẢ</a>
+            </section>
+            <!-- Vở học sinh -->
+            <section class="vohocsinh">
+                <h2 class="tieude">VỞ HỌC SINH</h2>
+                <div class="hang-sp">
+                    <div class="card-sanpham">
+                        <img src="../image/vohs/vo8.svg" class="anh-sp" alt="" />
+                        <p class="ten-sp">Sổ tay mini</p>
+                        <h4 class="gia-sp">Giá: 12.000 đ</h4>
+                        <a href="../Html/TrangSanPham.html" class="nut-xem">
+                            <i class="fa-solid fa-eye"></i>
+                            Xem sản phẩm
+                        </a>
+                    </div>
+
+                    <div class="card-sanpham">
+                        <img src="../image/vohs/vo16.svg" class="anh-sp" alt="" />
+                        <p class="ten-sp">Vở học sinh 5 ô ly vuông</p>
+                        <h4 class="gia-sp">Giá: 9.000 đ</h4>
+                        <a href="#" class="nut-xem">
+                            <i class="fa-solid fa-eye"></i>
+                            Xem sản phẩm
+                        </a>
+                    </div>
+
+                    <div class="card-sanpham">
+                        <img src="../image/vohs/vo9.svg" class="anh-sp" alt="" />
+                        <p class="ten-sp">Vở khổ giấy A4 96 trang</p>
+                        <h4 class="gia-sp">Giá: 15.000 đ</h4>
+                        <a href="#" class="nut-xem">
+                            <i class="fa-solid fa-eye"></i>
+                            Xem sản phẩm
+                        </a>
+                    </div>
+                </div>
+                <a href="../Html/SPDungVoHocSinh.html" class="nut-xemtatca">XEM TẤT CẢ</a>
+            </section>
+            <!-- Dụng cụ đo, tính toán -->
+            <section class="dungcudotinhtoan">
+                <h2 class="tieude">DỤNG CỤ ĐO, TÍNH TOÁN</h2>
+                <div class="hang-sp">
+                    <div class="card-sanpham">
+                        <img src="../image/Dcdo_tinhtoan/dott2.svg" class="anh-sp" alt="" />
+                        <p class="ten-sp">Thước kẻ đa năng</p>
+                        <h4 class="gia-sp">Giá: 30.000 đ</h4>
+                        <a href="#" class="nut-xem">
+                            <i class="fa-solid fa-eye"></i>
+                            Xem sản phẩm
+                        </a>
+                    </div>
+
+                    <div class="card-sanpham">
+                        <img src="../image/Dcdo_tinhtoan/dott6.svg" class="anh-sp" alt="" />
+                        <p class="ten-sp">Máy tính casio 580VN X</p>
+                        <h4 class="gia-sp">Giá: 700.000 đ</h4>
+                        <a href="#" class="nut-xem">
+                            <i class="fa-solid fa-eye"></i>
+                            Xem sản phẩm
+                        </a>
+                    </div>
+
+                    <div class="card-sanpham">
+                        <img src="../image/Dcdo_tinhtoan/dott1.svg" class="anh-sp" alt="" />
+                        <p class="ten-sp">Thước kẻ đa năng</p>
+                        <h4 class="gia-sp">Giá: 25.000 đ</h4>
+                        <a href="#" class="nut-xem">
+                            <i class="fa-solid fa-eye"></i>
+                            Xem sản phẩm
+                        </a>
+                    </div>
+                </div>
+                <a href="#" class="nut-xemtatca">XEM TẤT CẢ</a>
+            </section>
+            <!-- Họa phẩm -->
+            <section class="hoapham">
+                <h2 class="tieude">HỌA PHẨM</h2>
+                <div class="hang-sp">
+                    <div class="card-sanpham">
+                        <img src="../image/hoapham/hp4.svg" class="anh-sp" alt="" />
+                        <p class="ten-sp">Màu sáp vặn</p>
+                        <h4 class="gia-sp">Giá: 24.000 đ</h4>
+                        <a href="#" class="nut-xem">
+                            <i class="fa-solid fa-eye"></i>
+                            Xem sản phẩm
+                        </a>
+                    </div>
+
+                    <div class="card-sanpham">
+                        <img src="../image/hoapham/hp9.svg" class="anh-sp" alt="" />
+                        <p class="ten-sp">Giấy vẽ A3</p>
+                        <h4 class="gia-sp">Giá: 12.000 đ</h4>
+                        <a href="#" class="nut-xem">
+                            <i class="fa-solid fa-eye"></i>
+                            Xem sản phẩm
+                        </a>
+                    </div>
+
+                    <div class="card-sanpham">
+                        <img src="../image/hoapham/hp5.svg" class="anh-sp" alt="" />
+                        <p class="ten-sp">Màu sáp dầu 24 màu</p>
+                        <h4 class="gia-sp">Giá: 35.000 đ</h4>
+                        <a href="#" class="nut-xem">
+                            <i class="fa-solid fa-eye"></i>
+                            Xem sản phẩm
+                        </a>
+                    </div>
+                </div>
+                <a href="../Html/SPHoaPham.html" class="nut-xemtatca">XEM TẤT CẢ</a>
+            </section>
+            <!-- Balo -->
+            <section class="balo">
+                <h2 class="tieude">BALO</h2>
+                <div class="hang-sp">
+                    <div class="card-sanpham">
+                        <img src="../image/balo/bl6.svg" class="anh-sp" alt="" />
+                        <p class="ten-sp">Balo học sinh, sinh viên</p>
+                        <h4 class="gia-sp">Giá: 150.000 đ</h4>
+                        <a href="#" class="nut-xem">
+                            <i class="fa-solid fa-eye"></i>
+                            Xem sản phẩm
+                        </a>
+                    </div>
+
+                    <div class="card-sanpham">
+                        <img src="../image/balo/bl16.svg" class="anh-sp" alt="" />
+                        <p class="ten-sp">Balo học sinh tiểu học</p>
+                        <h4 class="gia-sp">Giá: 130.000 đ</h4>
+                        <a href="#" class="nut-xem">
+                            <i class="fa-solid fa-eye"></i>
+                            Xem sản phẩm
+                        </a>
+                    </div>
+
+                    <div class="card-sanpham">
+                        <img src="../image/balo/bl7.svg" class="anh-sp" alt="" />
+                        <p class="ten-sp">Balo học sinh, sinh viên</p>
+                        <h4 class="gia-sp">Giá: 145.000 đ</h4>
+                        <a href="#" class="nut-xem">
+                            <i class="fa-solid fa-eye"></i>
+                            Xem sản phẩm
+                        </a>
+                    </div>
+                </div>
+                <a href="../Html/SPBalo.html" class="nut-xemtatca">XEM TẤT CẢ</a>
+            </section>
+            <!-- Các sản phẩm khác -->
+            <section class="cacsanphamkhac">
+                <h2 class="tieude">CÁC SẢN PHẨM KHÁC</h2>
+                <div class="hang-sp">
+                    <div class="card-sanpham">
+                        <img src="../image/dungcukhac/dck18.svg" class="anh-sp" alt="" />
+                        <p class="ten-sp">Kéo học sinh</p>
+                        <h4 class="gia-sp">Giá: 15.000 đ</h4>
+                        <a href="#" class="nut-xem">
+                            <i class="fa-solid fa-eye"></i>
+                            Xem sản phẩm
+                        </a>
+                    </div>
+
+                    <div class="card-sanpham">
+                        <img src="../image/dungcukhac/dck26.svg" class="anh-sp" alt="" />
+                        <p class="ten-sp">Gọt bút chì hình heo con</p>
+                        <h4 class="gia-sp">Giá: 10.000 đ</h4>
+                        <a href="#" class="nut-xem">
+                            <i class="fa-solid fa-eye"></i>
+                            Xem sản phẩm
+                        </a>
+                    </div>
+
+                    <div class="card-sanpham">
+                        <img src="../image/dungcukhac/dck11.svg" class="anh-sp" alt="" />
+                        <p class="ten-sp">Ghim bấm</p>
+                        <h4 class="gia-sp">Giá: 30.000 đ</h4>
+                        <a href="#" class="nut-xem">
+                            <i class="fa-solid fa-eye"></i>
+                            Xem sản phẩm
+                        </a>
+                    </div>
+                </div>
+                <a href="../Html/SPCacSanPhamKhac.html" class="nut-xemtatca">XEM TẤT CẢ</a>
+            </section>
+        </section>
+        <!-- Phần footer -->
+        <!-- giúp full width -->
+        <footer class="footer">
+            <div class="footer-content">
+                <!-- Thông tin cửa hàng -->
+                <div class="footer-left">
+                    <h3>Thông tin cửa hàng</h3>
+                    <p class="store-name">Cửa hàng School Supplies Store</p>
+                    <p>
+                        <i class="fa-solid fa-envelope"></i>
+                        SchoolSuppliesStore@gmail.com
+                    </p>
+                    <p>
+                        <i class="fa-solid fa-location-dot"></i>
+                        243 Trần Văn Giàu, Phường Hòa Thuận,
+                        <br />
+                        Tỉnh Vĩnh Long
+                    </p>
+                </div>
+
+                <!-- Hotline -->
+                <div class="footer-right">
+                    <h3>Hotline liên hệ:</h3>
+                    <div class="hotline-box-end">
+                        <i class="fa-solid fa-phone-volume phone-icon"></i>
+                        <div>
+                            <p class="hotline-number">076. 299. 0875</p>
+                            <p class="hotline-time">7h00 - 18h00 (T2 - T7)</p>
+                        </div>
+                    </div>
+
+                    <h4 class="tt-Ketnoi">Kết nối với chúng tôi</h4>
+                    <div class="Cac-icon">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div class="footer-bottom">© Bản quyền thuộc về Cửa hàng School Supplies Store</div>
+    </body>
+</html>
