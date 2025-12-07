@@ -182,7 +182,7 @@ body {
 hr {
     color: #92ffd0;
 }
-.btn-danhmuc {
+/* .btn-danhmuc {
     background-color: #00bf63 !important;
     color: white !important;
     border: none !important;
@@ -206,7 +206,7 @@ hr {
 .dm-item:hover {
     background-color: #00bf63;
     color: #fff;
-}
+} */
 .txtdungcuviet {
     color: #00bf63;
 }
@@ -238,7 +238,7 @@ hr {
     font-weight: bold;
     margin-bottom: 10px;
 }
-.nut-xem {
+.nut-them {
     display: inline-block;
     background-color: #006633;
     color: white;
@@ -248,7 +248,7 @@ hr {
     font-weight: 500;
     transition: 0.2s;
 }
-.nut-xem:hover {
+.nut-them:hover {
     background-color: #00994c;
 }
 
@@ -281,6 +281,32 @@ hr {
 
 .phantrang .nut.active {
     background-color: #39b54a;
+}
+/* icon thêm vào mục yêu thích */
+.card-sanpham {
+    position: relative;
+    overflow: hidden; /* để icon không tràn ra ngoài khung */
+}
+
+/* Ngôi sao yêu thích */
+.favorite-icon {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 22px;
+    color: #5dff62; /* mặc định màu xám */
+    cursor: pointer;
+    z-index: 10;
+    transition: color 0.3s, transform 0.2s;
+}
+
+.favorite-icon:hover {
+    transform: scale(1.2);
+    color: gold;
+}
+
+.favorite-icon.active {
+    color: gold; /* khi đã yêu thích */
 }
 
 /* Phần Footer */
@@ -379,4 +405,103 @@ hr {
     padding: 12px 0;
     font-size: 14px;
     width: 100%;
+}
+/* mới thêm */
+/* ========== SIDEBAR ========== */
+
+/* Hộp mục */
+.sidebar-box {
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+}
+
+/* Tiêu đề xanh */
+.sidebar-title {
+    background: #009b4e;
+    color: #fff;
+    padding: 8px 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* Danh sách menu */
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin-top: 12px;
+}
+
+.sidebar-menu li {
+    padding: 6px 0;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.sidebar-menu li:last-child {
+    border-bottom: none;
+}
+
+.sidebar-menu a {
+    text-decoration: none;
+    color: #045330;
+    transition: 0.2s;
+}
+
+.sidebar-menu a:hover {
+    color: #00bf63;
+    font-weight: bold;
+}
+.sidebar-menu a.active {
+    color: #00bf63;
+    font-weight: bold;
+}
+.sidebar-menu li i {
+    text-decoration: none;
+    color: #045330;
+    transition: 0.2s;
+}
+/* ========== PRODUCT LIST ========== */
+.sidebar-product-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.product-item {
+    display: flex;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.product-item:last-child {
+    border-bottom: none;
+}
+
+.product-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.product-item .p-name {
+    font-size: 14px;
+    margin: 0;
+}
+
+.product-item .p-price {
+    color: #00bf63;
+    font-weight: bold;
+    margin: 2px 0 0;
+}
+
+/* Banner */
+.sidebar-banner img {
+    width: 100%;
+    border-radius: 4px;
+    display: block;
 }
