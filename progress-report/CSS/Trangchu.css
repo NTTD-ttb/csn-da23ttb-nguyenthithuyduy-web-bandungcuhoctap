@@ -241,12 +241,25 @@ body {
     margin-top: 25px;
 }
 /* Sản phẩm nổi bậc */
-.sanpham-noibat {
+/* .sanpham-noibat {
     background-color: #fff;
     padding: 30px 0;
     text-align: center;
     border-radius: 10px;
     border: 1px solid #007f40;
+} */
+.SanPhamNoiBac {
+    background-color: #fff;
+    padding-bottom: 30px;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #007f40;
+}
+.chuspnb {
+    background-color: #e2fff2;
+    margin-bottom: 30px;
+    margin-top: 0px;
+    border-radius: 10px;
 }
 .tieude {
     display: block;

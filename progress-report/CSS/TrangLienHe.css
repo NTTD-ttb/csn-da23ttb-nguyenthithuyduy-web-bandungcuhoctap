@@ -326,6 +326,15 @@ body {
         flex: 1 1 100%;
     }
 }
+/* ẩn phần cảm ơn */
+.camon {
+    display: none;
+    color: green;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
 /* Phần Footer */
 .footer {
     background-color: #e8fff4;
