@@ -93,21 +93,45 @@ document.addEventListener("DOMContentLoaded", () => {
     if (successBox) successBox.style.display = "none";
 
     // Nút Thanh toán
+    // btnThanhToan &&
+    //     btnThanhToan.addEventListener("click", () => {
+    //         const gioHang = JSON.parse(localStorage.getItem("gioHang")) || [];
+    //         if (!gioHang || gioHang.length === 0) {
+    //             alert("Giỏ hàng của bạn đang trống!");
+    //             return;
+    //         }
+
+    //         // Hiện form đặt hàng
+    //         if (formBox) {
+    //             formBox.style.display = "block";
+    //             window.scrollTo({ top: formBox.offsetTop - 20, behavior: "smooth" });
+    //         }
+
+    //         // Ẩn thông báo trước đó
+    //         if (successBox) successBox.style.display = "none";
+    //     });
     btnThanhToan &&
         btnThanhToan.addEventListener("click", () => {
+            //  KIỂM TRA NGƯỜI DÙNG ĐÃ ĐĂNG NHẬP CHƯA
+            const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+            if (!currentUser) {
+                alert("Bạn cần đăng nhập trước khi thanh toán!");
+                window.location.href = "../html/dangnhap.html";
+                return;
+            }
+
             const gioHang = JSON.parse(localStorage.getItem("gioHang")) || [];
             if (!gioHang || gioHang.length === 0) {
                 alert("Giỏ hàng của bạn đang trống!");
                 return;
             }
 
-            // Hiện form đặt hàng
+            //  Khi đã đăng nhập → HIỆN FORM ĐẶT HÀNG
             if (formBox) {
                 formBox.style.display = "block";
                 window.scrollTo({ top: formBox.offsetTop - 20, behavior: "smooth" });
             }
 
-            // Ẩn thông báo trước đó
             if (successBox) successBox.style.display = "none";
         });
 
@@ -168,7 +192,71 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Tạo mã đơn hàng
             const randomCode = "MDH" + Math.floor(100000 + Math.random() * 900000);
+            // =------------------------------ mới chèn 12/10/2025
+            // Tạo mã đơn hàng
 
+            // ==============================
+            //  LƯU ĐƠN HÀNG VÀO LOCALSTORAGE
+            // ==============================
+
+            // Lấy người dùng hiện tại
+            // ==============================
+            //  LƯU ĐƠN HÀNG THEO USER
+            // ==============================
+
+            // Lấy người dùng hiện tại
+            const currentUserLS = JSON.parse(localStorage.getItem("currentUser"));
+            const emailNguoiMua = currentUserLS.email;
+
+            // Tạo key theo từng tài khoản
+            const keyDonHang = "donHang_" + emailNguoiMua;
+
+            // Lấy danh sách đơn hàng cũ
+            let danhSachDonHang = JSON.parse(localStorage.getItem(keyDonHang)) || [];
+            // Lấy dữ liệu từ form
+            const hoten = document.getElementById("hoten").value.trim();
+            const diachi = document.getElementById("diachi").value.trim();
+            const sdt = document.getElementById("sdt").value.trim();
+            const ghichu = document.getElementById("ghichu").value.trim();
+
+            // Lấy tổng tiền thanh toán (bỏ chữ đ, bỏ dấu chấm)
+            let tongGiaText = document.getElementById("tongThanhToan").textContent.replace(/[^\d]/g, "");
+            let tongGiaTri = parseInt(tongGiaText) || 0;
+
+            // Lấy giỏ hàng hiện tại
+            const gioHangHienTai = JSON.parse(localStorage.getItem("gioHang")) || [];
+
+            // Tạo ngày mua (ngày giờ Việt Nam)
+            const ngayMua = new Date();
+            const ngay = String(ngayMua.getDate()).padStart(2, "0");
+            const thang = String(ngayMua.getMonth() + 1).padStart(2, "0");
+            const nam = ngayMua.getFullYear();
+            const gio = String(ngayMua.getHours()).padStart(2, "0");
+            const phut = String(ngayMua.getMinutes()).padStart(2, "0");
+            const giay = String(ngayMua.getSeconds()).padStart(2, "0");
+
+            const ngayMuaText = `${ngay}/${thang}/${nam} ${gio}:${phut}:${giay}`;
+
+            // Tạo object đơn hàng
+            const donHang = {
+                maDonHang: randomCode,
+                email: emailNguoiMua,
+                hoTen: hoten,
+                diaChi: diachi,
+                soDienThoai: sdt,
+                ghiChu: ghichu,
+                ngayMua: ngayMuaText,
+                tongGia: tongGiaTri,
+                danhSachSanPham: gioHangHienTai,
+            };
+
+            // Thêm đơn hàng vào mảng
+            danhSachDonHang.push(donHang);
+
+            // Lưu vào LocalStorage
+            localStorage.setItem(keyDonHang, JSON.stringify(danhSachDonHang));
+
+            // ========================end 12/10/2025-----------
             // Xóa giỏ hàng
             localStorage.removeItem("gioHang");
 

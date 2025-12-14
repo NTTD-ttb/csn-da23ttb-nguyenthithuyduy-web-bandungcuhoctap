@@ -1,17 +1,38 @@
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.querySelector(".LienHeForm");
-    const thongBaoCamOn = document.querySelector(".camon");
+    const camonMsg = document.querySelector(".camon");
 
-    form.addEventListener("submit", (e) => {
-        e.preventDefault(); // Ngăn load lại trang
+    // Ẩn dòng cảm ơn lúc đầu
+    camonMsg.style.display = "none";
 
-        // Hiện thông báo cảm ơn
-        thongBaoCamOn.style.display = "block";
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
 
-        // Cuộn xuống dòng cảm ơn cho đẹp
-        thongBaoCamOn.scrollIntoView({ behavior: "smooth" });
+        let hoten = document.getElementById("hoten").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let noidung = document.getElementById("noidung").value.trim();
 
-        // Xóa form sau khi gửi (tùy chọn)
+        // Lấy danh sách liên hệ cũ
+        let dsLienHe = JSON.parse(localStorage.getItem("dsLienHe")) || [];
+
+        // Tạo object mới
+        let lienHeMoi = {
+            hoten: hoten,
+            email: email,
+            noidung: noidung,
+            time: new Date().toLocaleString("vi-VN"),
+        };
+
+        // Thêm vào danh sách
+        dsLienHe.push(lienHeMoi);
+
+        // Lưu lại vào localStorage
+        localStorage.setItem("dsLienHe", JSON.stringify(dsLienHe));
+
+        // Hiện dòng cảm ơn
+        camonMsg.style.display = "block";
+
+        // Reset form
         form.reset();
     });
 });

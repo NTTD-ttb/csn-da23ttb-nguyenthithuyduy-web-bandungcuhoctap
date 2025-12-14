@@ -95,6 +95,7 @@ function activeYeuThichIcon() {
 }
 
 document.addEventListener("DOMContentLoaded", activeYeuThichIcon);
+// sản phẩm nổi bậc bên trái
 
 // -----------------------------
 // 5. Khi tải trang → render sản phẩm

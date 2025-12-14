@@ -26,10 +26,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const thongSoHTML = `
     <li>Thương hiệu: ${sp.thuongHieu}</li>
     <li>Kích thước: ${sp.kichThuoc}</li>
-    <li>Số trang: ${sp.soTrang}</li>
     <li>Định lượng: ${sp.dinhLuong}</li>
-    <li>Độ trắng: ${sp.doTrang}</li>
     <li>Đóng gói: ${sp.dongGoi}</li>
+    <li>Thông tin khác: ${sp.Thongtinkhac}</li>
 `;
 
     document.getElementById("ct-thongso").innerHTML = thongSoHTML;

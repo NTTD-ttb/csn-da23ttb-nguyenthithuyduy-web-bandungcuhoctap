@@ -34,3 +34,37 @@ document.addEventListener("DOMContentLoaded", () => {
     hienThiTheoDanhMuc("Sản phẩm Nổi Bậc", "spNoiBac2");
     hienThiTheoDanhMuc("Sản phẩm Nổi Bậc", "spNoiBac3");
 });
+// đăng xuất đăng nhập
+document.addEventListener("DOMContentLoaded", () => {
+    const userArea = document.getElementById("userArea");
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+    // Nếu CHƯA đăng nhập -> giữ nguyên Đăng ký | Đăng nhập
+    if (!currentUser) {
+        userArea.innerHTML = `
+            <a href="../Html/Dangki.html">Đăng kí</a>
+            <span>|</span>
+            <a href="../Html/Dangnhap.html">Đăng nhập</a>
+        `;
+        return;
+    }
+
+    // Nếu ĐÃ đăng nhập -> hiện tên + dropdown đăng xuất
+    userArea.innerHTML = `
+        <div class="dropdown">
+            <button class="btn dropdown-toggle text-capitalize tendangnhap" data-bs-toggle="dropdown">
+                ${currentUser.hoten}
+            </button>
+            <ul class="dropdown-menu tendangxuat">
+                <li><a class="dropdown-item" id="btnLogout">Đăng xuất</a></li>
+                <li><a class="dropdown-item" id="btnDonhang" href="../Html/donhang.html">Đơn hàng</a></li>
+            </ul>
+        </div>
+    `;
+
+    // Xử lý đăng xuất
+    document.getElementById("btnLogout").addEventListener("click", () => {
+        localStorage.removeItem("currentUser");
+        window.location.reload(); // load lại trang để hiện lại Đăng nhập | Đăng ký
+    });
+});
