@@ -9,12 +9,18 @@
         <title>Cửa hàng dụng cụ học tập</title>
         <link rel="icon" href="../image/logo_icon.png" />
         <link rel="stylesheet" href="../CSS/TrangChiTietSanPham.css" />
+        <link rel="stylesheet" href="../CSS/TrangChu.css" />
         <!-- link thu vien icon Font Awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     </head>
     <body>
         <!-- Phần header -->
         <div class="header">
+            <div class="header-dkdn container">
+                <p class="welcome">Chào bạn đến với cửa hàng dụng cụ học tập School Supplies Store</p>
+                <div class="dangki-dangnhap" id="userArea"></div>
+            </div>
+            <hr class="hr-hd" />
             <div class="header-top container">
                 <!-- Logo của cửa hàng -->
                 <div class="logo">
@@ -44,9 +50,7 @@
                 <ul>
                     <li><a href="../Html/TrangChu.html">Trang chủ</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="../Html/TrangSanPham.html" id="Dropdown-SP" role="button" data-bs-toggle="dropdown">
-                            Sản phẩm
-                        </a>
+                        <a class="nav-link dropdown-toggle active" href="../Html/SanPhamChung.html" id="Dropdown-SP">Sản phẩm</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="../Html/TrangSanPham.html">Dụng cụ viết</a></li>
                             <li><a class="dropdown-item" href="../Html/SPDungVoHocSinh.html">Vở học sinh</a></li>
@@ -63,41 +67,45 @@
         </div>
         <!-- phan noi dung -->
         <div class="container mt-4">
-            <table class="Bang-SP">
+            <!-- bảng js them sau -->
+            <table class="Bang-SP" id="sp2">
                 <tr>
                     <td rowspan="2" class="product-img">
-                        <img src="../image/buths/but1.svg" alt="Vở 4 ô ly kẻ ngang" />
+                        <img id="ct-img" src="" alt="ảnh sản phẩm" />
                     </td>
+
                     <td class="product-top position-relative">
-                        <i class="fa-solid fa-star favorite-icon"></i>
-                        <h4>Vở 4 ô ly kẻ ngang</h4>
+                        <!-- <i class="fa-solid fa-star favorite-icon"></i> -->
+
+                        <h4 id="ct-ten"></h4>
+
                         <p>
                             Giá:
-                            <span class="GiaSP-chitiet">150 000 đ</span>
+                            <span class="GiaSP-chitiet" id="ct-gia"></span>
                         </p>
-                        <p>Mã sản phẩm: 7153 | Barcode: 8935044571532</p>
+
+                        <p id="ct-ma"></p>
                     </td>
                 </tr>
+
                 <tr>
                     <td class="product-bottom">
-                        <ul>
-                            <li>Thương hiệu: ........</li>
-                            <li>Kích thước: 170 × 240 (±2mm)</li>
-                            <li>Số trang: 200 trang không kể bìa</li>
-                            <li>Định lượng: 100g/m²</li>
-                            <li>Độ trắng: 82%ISO</li>
-                            <li>Đóng gói: 10 quyển/lốc – 200 quyển/thùng</li>
+                        <ul id="ct-thongso">
+                            <!-- JS sẽ tự đổ thông số vào -->
                         </ul>
-                        <!-- Nút mua hàng -->
+
+                        <!-- Nút mua hàng  -->
                         <div class="quantity-section">
                             <div class="quantity-control">
                                 <button class="btn-minus">-</button>
-                                <input type="text" value="1" />
+                                <input id="ct-sl" type="text" value="1" />
                                 <button class="btn-plus">+</button>
                             </div>
-                            <button class="add-cart">Thêm vào giỏ hàng</button>
+
+                            <button id="btn-add-cart" class="add-cart">Thêm vào giỏ hàng</button>
                         </div>
-                        <!--Phần nhận tư vấn -->
+
+                        <!-- Phần nhận tư vấn -->
                         <div class="consult-section">
                             <input type="text" placeholder="Số điện thoại của bạn" />
                             <button class="btn-consult">NHẬN TƯ VẤN</button>
@@ -105,44 +113,12 @@
                     </td>
                 </tr>
             </table>
+
             <!-- Các sp tương tự -->
             <div class="spttchung mt-4">
                 <h5 class="text-success fw-bold mb-3">CÁC SẢN PHẨM TƯƠNG TỰ</h5>
-                <div class="product-list">
-                    <div class="card-sanpham">
-                        <img src="../image/vohs/vo16.svg" class="anh-sp" alt="" />
-                        <p class="ten-sp">Book thiên long</p>
-                        <h4 class="gia-sp">Giá: 12.000 đ</h4>
-                        <a href="#" class="nut-xem">Thêm giỏ hàng</a>
-                    </div>
 
-                    <div class="card-sanpham">
-                        <img src="../image/vohs/vo10.svg" class="anh-sp" alt="" />
-                        <p class="ten-sp">Book thiên long</p>
-                        <h4 class="gia-sp">Giá: 12.000 đ</h4>
-                        <a href="#" class="nut-xem">Thêm giỏ hàng</a>
-                    </div>
-
-                    <div class="card-sanpham">
-                        <img src="../image/vohs/vo2.svg" class="anh-sp" alt="" />
-                        <p class="ten-sp">Book thiên long</p>
-                        <h4 class="gia-sp">Giá: 12.000 đ</h4>
-                        <a href="#" class="nut-xem">Thêm giỏ hàng</a>
-                    </div>
-
-                    <div class="card-sanpham">
-                        <img src="../image/vohs/vo3.svg" class="anh-sp" alt="" />
-                        <p class="ten-sp">Book thiên long</p>
-                        <h4 class="gia-sp">Giá: 12.000 đ</h4>
-                        <a href="#" class="nut-xem">Thêm giỏ hàng</a>
-                    </div>
-                    <div class="card-sanpham">
-                        <img src="../image/vohs/vo7.svg" class="anh-sp" alt="" />
-                        <p class="ten-sp">Book thiên long</p>
-                        <h4 class="gia-sp">Giá: 12.000 đ</h4>
-                        <a href="#" class="nut-xem">Thêm giỏ hàng</a>
-                    </div>
-                </div>
+                <div class="product-list" id="spTuongTu"></div>
             </div>
         </div>
         <!-- Phần footer -->
@@ -188,5 +164,14 @@
             </div>
         </footer>
         <div class="footer-bottom">© Bản quyền thuộc về Cửa hàng School Supplies Store</div>
+        <!-- js mơi sau -->
+        <script src="../jjs/Trangchu.js"></script>
+        <script src="../jjs/data.js"></script>
+        <script src="../jjs/Trangsp.js"></script>
+        <!-- dsSanPham -->
+        <script src="../jjs/Giohang.js"></script>
+        <!-- chứa themGioHang() -->
+        <script src="../jjs/ChiTietSP.js"></script>
+        <script src="../jjs/Timkiem.js"></script>
     </body>
 </html>

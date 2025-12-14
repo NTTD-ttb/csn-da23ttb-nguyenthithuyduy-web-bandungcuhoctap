@@ -9,12 +9,18 @@
         <title>Cửa hàng dụng cụ học tập</title>
         <link rel="icon" href="../image/logo_icon.png" />
         <link rel="stylesheet" href="../CSS/TrangSanPham.css" />
+        <link rel="stylesheet" href="../CSS/TrangChu.css" />
         <!-- link thu vien icon Font Awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     </head>
     <body>
         <!-- Phần header -->
         <div class="header">
+            <div class="header-dkdn container">
+                <p class="welcome">Chào bạn đến với cửa hàng dụng cụ học tập School Supplies Store</p>
+                <div class="dangki-dangnhap" id="userArea"></div>
+            </div>
+            <hr class="hr-hd" />
             <div class="header-top container">
                 <!-- Logo của cửa hàng -->
                 <div class="logo">
@@ -44,9 +50,7 @@
                 <ul>
                     <li><a href="../Html/TrangChu.html">Trang chủ</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="../Html/TrangSanPham.html" id="Dropdown-SP" role="button" data-bs-toggle="dropdown">
-                            Sản phẩm
-                        </a>
+                        <a class="nav-link dropdown-toggle active" href="../Html/SanPhamChung.html" id="Dropdown-SP">Sản phẩm</a>
                         <ul class="dropdown-menu rd-menu">
                             <li><a class="dropdown-item" href="../Html/TrangSanPham.html">Dụng cụ viết</a></li>
                             <li><a class="dropdown-item" href="../Html/SPDungVoHocSinh.html">Vở học sinh</a></li>
@@ -65,157 +69,79 @@
         <main class="container my-4">
             <div class="row">
                 <!-- Danh mục bên trái -->
-                <div class="col-md-3">
-                    <div class="dropdown w-100">
-                        <button class="btn btn-danhmuc dropdown-toggle w-100" type="button" data-bs-toggle="dropdown">Danh mục</button>
-                        <ul class="dropdown-menu w-100">
-                            <li><a class="dropdown-item dm-item" href="../Html/TrangSanPham.html">Dụng cụ viết</a></li>
-                            <li><a class="dropdown-item dm-item" href="../Html/SPDungVoHocSinh.html">Vở học sinh</a></li>
+                <div id="sidebar" class="col-md-3 sidebar">
+                    <!-- Danh mục -->
+                    <div class="sidebar-box">
+                        <h3 class="sidebar-title">DANH MỤC</h3>
+                        <ul class="sidebar-menu">
                             <li>
-                                <a class="dropdown-item dm-item" href="../Html/SPDungCuDo_TinhToan.html">Dụng cụ đo, tính toán</a>
+                                <i class="fa-solid fa-pencil"></i>
+                                <a href="../Html/TrangSanPham.html">Dụng cụ viết</a>
                             </li>
-                            <li><a class="dropdown-item dm-item" href="../Html/SPHoaPham.html">Họa phẩm</a></li>
-                            <li><a class="dropdown-item dm-item active" href="../Html/SPBalo.html">Balo</a></li>
-                            <li><a class="dropdown-item dm-item" href="../Html/SPCacSanPhamKhac.html">Các sản phẩm khác</a></li>
+                            <li>
+                                <i class="fa-solid fa-book"></i>
+                                <a href="../Html/SPDungVoHocSinh.html">Vở học sinh</a>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-calculator"></i>
+                                <a href="../Html/SPDungCuDo_TinhToan.html">Dụng cụ đo, tính toán</a>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-palette"></i>
+                                <a href="../Html/SPHoaPham.html">Họa phẩm</a>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-briefcase"></i>
+                                <a href="../Html/SPBalo.html" class="active">Balo</a>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-box"></i>
+                                <a href="../Html/SPCacSanPhamKhac.html">Các sản phẩm khác</a>
+                            </li>
                         </ul>
+                    </div>
+
+                    <!-- Sản phẩm nổi bật -->
+                    <div class="sidebar-box">
+                        <h3 class="sidebar-title">SẢN PHẨM NỔI BẬT</h3>
+
+                        <ul class="sidebar-product-list">
+                            <li class="product-item">
+                                <img src="../image/balo/bl7.svg" alt="" />
+                                <div class="info">
+                                    <p class="p-name">Balo học sinh, sinh viên</p>
+                                    <p class="p-price">145.000₫</p>
+                                </div>
+                            </li>
+
+                            <li class="product-item">
+                                <img src="../image/Dcdo_tinhtoan/dott5.svg" alt="" />
+                                <div class="info">
+                                    <p class="p-name">Máy tính cầm tay mmini</p>
+                                    <p class="p-price">120.000₫</p>
+                                </div>
+                            </li>
+
+                            <li class="product-item">
+                                <img src="../image/buths/but13.svg" alt="" />
+                                <div class="info">
+                                    <p class="p-name">Bút dạ quang</p>
+                                    <p class="p-price">12.000₫</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Banner -->
+                    <div class="sidebar-banner">
+                        <img src="../image/bannersp.svg" alt="" />
                     </div>
                 </div>
                 <!-- Phần sản phẩm bên phải -->
                 <div class="col-md-9">
                     <h2 class="txtdungcuviet mb-4">BALO</h2>
                     <hr />
-                    <div class="row g-3">
-                        <!-- 16 sản phẩm -->
-                        <div class="col-6 col-md-3">
-                            <div class="card-sanpham">
-                                <img src="../image/balo/bl1.svg" class="anh-sp" alt="" />
-                                <p class="ten-sp">Balo học sinh tiểu học</p>
-                                <h4 class="gia-sp">Giá: 135.000 đ</h4>
-                                <a href="#" class="nut-xem">Thêm giỏ hàng</a>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-3">
-                            <div class="card-sanpham">
-                                <img src="../image/balo/bl2.svg" class="anh-sp" alt="" />
-                                <p class="ten-sp">Balo học sinh mẫu giáo</p>
-                                <h4 class="gia-sp">Giá: 110.000 đ</h4>
-                                <a href="#" class="nut-xem">Thêm giỏ hàng</a>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-3">
-                            <div class="card-sanpham">
-                                <img src="../image/balo/bl3.svg" class="anh-sp" alt="" />
-                                <p class="ten-sp">Balo học sinh tiểu học</p>
-                                <h4 class="gia-sp">Giá: 120.000 đ</h4>
-                                <a href="#" class="nut-xem">Thêm giỏ hàng</a>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-3">
-                            <div class="card-sanpham">
-                                <img src="../image/balo/bl4.svg" class="anh-sp" alt="" />
-                                <p class="ten-sp">Balo học sinh tiểu học</p>
-                                <h4 class="gia-sp">Giá: 120.000 đ</h4>
-                                <a href="#" class="nut-xem">Thêm giỏ hàng</a>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-3">
-                            <div class="card-sanpham">
-                                <img src="../image/balo/bl5.svg" class="anh-sp" alt="" />
-                                <p class="ten-sp">Balo học sinh, sinh viên</p>
-                                <h4 class="gia-sp">Giá: 125.000 đ</h4>
-                                <a href="#" class="nut-xem">Thêm giỏ hàng</a>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-3">
-                            <div class="card-sanpham">
-                                <img src="../image/balo/bl6.svg" class="anh-sp" alt="" />
-                                <p class="ten-sp">Balo học sinh, sinh viên</p>
-                                <h4 class="gia-sp">Giá: 150.000 đ</h4>
-                                <a href="#" class="nut-xem">Thêm giỏ hàng</a>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-3">
-                            <div class="card-sanpham">
-                                <img src="../image/balo/bl7.svg" class="anh-sp" alt="" />
-                                <p class="ten-sp">Balo học sinh, sinh viên</p>
-                                <h4 class="gia-sp">Giá: 145.000 đ</h4>
-                                <a href="#" class="nut-xem">Thêm giỏ hàng</a>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-3">
-                            <div class="card-sanpham">
-                                <img src="../image/balo/bl8.svg" class="anh-sp" alt="" />
-                                <p class="ten-sp">Balo học sinh, sinh viên</p>
-                                <h4 class="gia-sp">Giá: 130.000 đ</h4>
-                                <a href="#" class="nut-xem">Thêm giỏ hàng</a>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-3">
-                            <div class="card-sanpham">
-                                <img src="../image/balo/bl9.svg" class="anh-sp" alt="" />
-                                <p class="ten-sp">Balo học sinh, sinh viên</p>
-                                <h4 class="gia-sp">Giá: 200.000 đ</h4>
-                                <a href="#" class="nut-xem">Thêm giỏ hàng</a>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-3">
-                            <div class="card-sanpham">
-                                <img src="../image/balo/bl10.svg" class="anh-sp" alt="" />
-                                <p class="ten-sp">Balo học sinh, sinh viên</p>
-                                <h4 class="gia-sp">Giá: 190.000 đ</h4>
-                                <a href="#" class="nut-xem">Thêm giỏ hàng</a>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-3">
-                            <div class="card-sanpham">
-                                <img src="../image/balo/bl11.svg" class="anh-sp" alt="" />
-                                <p class="ten-sp">Balo học sinh, sinh viên</p>
-                                <h4 class="gia-sp">Giá: 140.000 đ</h4>
-                                <a href="#" class="nut-xem">Thêm giỏ hàng</a>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-3">
-                            <div class="card-sanpham">
-                                <img src="../image/balo/bl12.svg" class="anh-sp" alt="" />
-                                <p class="ten-sp">Balo học sinh, sinh viên</p>
-                                <h4 class="gia-sp">Giá: 120.000 đ</h4>
-                                <a href="#" class="nut-xem">Thêm giỏ hàng</a>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-3">
-                            <div class="card-sanpham">
-                                <img src="../image/balo/bl13.svg" class="anh-sp" alt="" />
-                                <p class="ten-sp">Balo học sinh, sinh viên</p>
-                                <h4 class="gia-sp">Giá: 130.000 đ</h4>
-                                <a href="#" class="nut-xem">Thêm giỏ hàng</a>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-3">
-                            <div class="card-sanpham">
-                                <img src="../image/balo/bl4.svg" class="anh-sp" alt="" />
-                                <p class="ten-sp">Balo học sinh tiểu học</p>
-                                <h4 class="gia-sp">Giá: 120.000 đ</h4>
-                                <a href="#" class="nut-xem">Thêm giỏ hàng</a>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-3">
-                            <div class="card-sanpham">
-                                <img src="../image/balo/bl15.svg" class="anh-sp" alt="" />
-                                <p class="ten-sp">Balo học sinh tiểu học</p>
-                                <h4 class="gia-sp">Giá: 150.000 đ</h4>
-                                <a href="#" class="nut-xem">Thêm giỏ hàng</a>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-3">
-                            <div class="card-sanpham">
-                                <img src="../image/balo/bl16.svg" class="anh-sp" alt="" />
-                                <p class="ten-sp">Balo học sinh tiểu học</p>
-                                <h4 class="gia-sp">Giá: 130.000 đ</h4>
-                                <a href="#" class="nut-xem">Thêm giỏ hàng</a>
-                            </div>
-                        </div>
-                    </div>
-
+                    <div class="row g-3" id="listSanPham"></div>
                     <!-- Nút chuyển trang -->
                     <div class="phantrang">
                         <a href="#" class="nut">&lt;</a>
@@ -267,5 +193,14 @@
             </div>
         </footer>
         <div class="footer-bottom">© Bản quyền thuộc về Cửa hàng School Supplies Store</div>
+        <!-- link js -->
+        <!-- <script src="../JS/TrangSP.js"></script> -->
+        <script>
+            const DANH_MUC = "Balo";
+        </script>
+        <script src="../jjs/Trangchu.js"></script>
+        <script src="../jjs/data.js"></script>
+        <script src="../jjs/Trangsp.js"></script>
+        <script src="../jjs/Timkiem.js"></script>
     </body>
 </html>

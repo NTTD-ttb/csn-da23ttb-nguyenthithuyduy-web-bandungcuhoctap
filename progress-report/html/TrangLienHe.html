@@ -9,12 +9,18 @@
         <title>Cửa hàng dụng cụ học tập</title>
         <link rel="icon" href="../image/logo_icon.png" />
         <link rel="stylesheet" href="../CSS/TrangLienHe.css" />
+        <link rel="stylesheet" href="../CSS/TrangChu.css" />
         <!-- link thu vien icon Font Awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     </head>
     <body>
         <!-- Phần header -->
         <div class="header">
+            <div class="header-dkdn container">
+                <p class="welcome">Chào bạn đến với cửa hàng dụng cụ học tập School Supplies Store</p>
+                <div class="dangki-dangnhap" id="userArea"></div>
+            </div>
+            <hr class="hr-hd" />
             <div class="header-top container">
                 <!-- Logo của cửa hàng -->
                 <div class="logo">
@@ -44,9 +50,7 @@
                 <ul>
                     <li><a href="../Html/TrangChu.html">Trang chủ</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="../Html/TrangSanPham.html" id="Dropdown-SP" role="button" data-bs-toggle="dropdown">
-                            Sản phẩm
-                        </a>
+                        <a class="nav-link dropdown-toggle" href="../Html/SanPhamChung.html" id="Dropdown-SP">Sản phẩm</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="../Html/TrangSanPham.html">Dụng cụ viết</a></li>
                             <li><a class="dropdown-item" href="../Html/SPDungVoHocSinh.html">Vở học sinh</a></li>
@@ -160,5 +164,8 @@
             </div>
         </footer>
         <div class="footer-bottom">© Bản quyền thuộc về Cửa hàng School Supplies Store</div>
+        <script src="../jjs/Timkiem.js"></script>
+        <script src="../jjs/Trangchu.js"></script>
+        <script src="../jjs/lienhe.js"></script>
     </body>
 </html>

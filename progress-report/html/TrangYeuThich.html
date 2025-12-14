@@ -9,12 +9,18 @@
         <title>Cửa hàng dụng cụ học tập</title>
         <link rel="icon" href="../image/logo_icon.png" />
         <link rel="stylesheet" href="../CSS/TrangYeuThich.css" />
+        <link rel="stylesheet" href="../CSS/TrangChu.css" />
         <!-- link thu vien icon Font Awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     </head>
     <body>
         <!-- Phần header -->
         <div class="header">
+            <div class="header-dkdn container">
+                <p class="welcome">Chào bạn đến với cửa hàng dụng cụ học tập School Supplies Store</p>
+                <div class="dangki-dangnhap" id="userArea"></div>
+            </div>
+            <hr class="hr-hd" />
             <div class="header-top container">
                 <!-- Logo của cửa hàng -->
                 <div class="logo">
@@ -44,9 +50,7 @@
                 <ul>
                     <li><a href="../Html/TrangChu.html">Trang chủ</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="../Html/TrangSanPham.html" id="Dropdown-SP" role="button" data-bs-toggle="dropdown">
-                            Sản phẩm
-                        </a>
+                        <a class="nav-link dropdown-toggle" href="../Html/SanPhamChung.html" id="Dropdown-SP">Sản phẩm</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="../Html/TrangSanPham.html">Dụng cụ viết</a></li>
                             <li><a class="dropdown-item" href="../Html/SPDungVoHocSinh.html">Vở học sinh</a></li>
@@ -69,37 +73,14 @@
                 <table class="table table-bordered align-middle text-center bangYeuThich">
                     <thead>
                         <tr>
-                            <th>Ảnh sản phẩm</th>
+                            <th>Hình ảnh</th>
                             <th>Tên sản phẩm</th>
-                            <th>Đơn giá</th>
+                            <th>Giá</th>
                             <th>Thêm vào giỏ hàng</th>
                             <th>Xóa</th>
                         </tr>
                     </thead>
-                    <tbody id="wishlistTable">
-                        <tr>
-                            <td><img src="../image/vohs/vo16.svg" alt="Sản phẩm" class="anhSanPham" /></td>
-                            <td>Book thiên long</td>
-                            <td class="donGia">12.000 đ</td>
-                            <td>
-                                <button class="btnThem"><i class="fa fa-shopping-cart"></i></button>
-                            </td>
-                            <td>
-                                <button class="btnXoa"><i class="fa fa-trash"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><img src="../image/vohs/vo3.svg" alt="Sản phẩm" class="anhSanPham" /></td>
-                            <td>Book thiên long</td>
-                            <td class="donGia">12.000 đ</td>
-                            <td>
-                                <button class="btnThem"><i class="fa fa-shopping-cart"></i></button>
-                            </td>
-                            <td>
-                                <button class="btnXoa"><i class="fa fa-trash"></i></button>
-                            </td>
-                        </tr>
-                    </tbody>
+                    <tbody id="dsYeuThich"></tbody>
                 </table>
             </div>
             <a href="../Html/TrangSanPham.html">
@@ -152,5 +133,15 @@
             </div>
         </footer>
         <div class="footer-bottom">© Bản quyền thuộc về Cửa hàng School Supplies Store</div>
+        <!-- js mơi sau -->
+        <script src="../jjs/Trangchu.js"></script>
+        <script src="../jjs/data.js"></script>
+        <script src="../jjs/Trangsp.js"></script>
+
+        <!-- dsSanPham -->
+        <script src="../jjs/Giohang.js"></script>
+        <!-- chứa themGioHang() -->
+        <script src="../jjs/YeuThich.js"></script>
+        <script src="../jjs/Timkiem.js"></script>
     </body>
 </html>
