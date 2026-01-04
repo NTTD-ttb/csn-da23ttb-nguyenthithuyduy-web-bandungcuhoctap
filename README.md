@@ -4,7 +4,11 @@
 - Cài đặt phần mềm **Visual Studio Code**  
    [Link tải tại đây](https://visualstudio.microsoft.com)  
 - Trong **Visual Studio Code**, vào mục **Extensions**, tìm và cài đặt công cụ **Live Server** để chạy website trên trình duyệt.  
-## Nội dung thực hiện: Hoàn thành giao diện của các trang gồm  
+## Nội dung thực hiện: 
+   ## B1: Thiết kế giao diện website, đặc tả được các tính năng của website
+   ## B2: Tiến hành code giao diện và các tính năng
+   ## B3: Viết báo cáo
+Hoàn thành giao diện của các trang gồm  
 ### 1. Giao diện trang chủ
 - Gồm phần header, banner giới thiệu cửa hàng, danh sách sản phẩm nổi bật và phần footer.  
 ### 2. Trang Sản phẩm  
