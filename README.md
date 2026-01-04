@@ -18,5 +18,9 @@
 - Có form điền thông tin khách hàng khi đặt hàng và yêu cầu thanh toán.  
 ### 6. Trang Chi tiết sản phẩm  
 - Hiển thị thông tin chi tiết sản phẩm và gợi ý các sản phẩm tương tự.  
+### 7. Trang tài khoản
+- Hiển thị thông tin về tài khoản của người dùng có thể thay đổi mật khẩu, tên tài khoản, biểu đồ tổng quan chi tiêu
+### 8. Các trang quản trị
+- Bao gồm trang quản lý liên hệ, quản lý tài khoản, quản lý sản phẩm, quản lý đơn hàng.
 
 
