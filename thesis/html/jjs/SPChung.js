@@ -206,3 +206,32 @@ document.addEventListener("DOMContentLoaded", () => {
     renderSanPhamNoiBat();
     activeYeuThichIcon();
 });
+//
+document.addEventListener("DOMContentLoaded", () => {
+    let tuKhoa = localStorage.getItem("tuKhoaTimKiem");
+
+    if (tuKhoa) {
+        let ds = layDSSanPham();
+
+        let tuKhoaKhongDau = removeDiacritics(tuKhoa.toLowerCase());
+
+        dsDangHienThi = ds.filter((sp) => removeDiacritics(sp.ten.toLowerCase()).includes(tuKhoaKhongDau));
+
+        currentPage = 1;
+
+        // Xóa từ khóa sau khi dùng tránh ảnh hưởng lọc khác
+        localStorage.removeItem("tuKhoaTimKiem");
+    }
+
+    hienThiSanPham();
+    renderSanPhamNoiBat();
+    activeYeuThichIcon();
+});
+
+function removeDiacritics(str) {
+    return str
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/đ/g, "d")
+        .replace(/Đ/g, "D");
+}
